@@ -35,14 +35,14 @@ softmax 输入是否可以输入全都是0
 hmm 知道观察序列和状态序列，用什么方法来估计参数
 resnet zero padding 会不会导致参数增多
 宽搜的时间复杂度
-
-dqn设计flappybird思路
-宽度优先搜索大题
-一个（4,4,6,16）卷积的权重参数个数计算。
-
-Lstm  推导
-
 word2vec, fasttext,等那种方法适合处理oov（out of vacabulary)
 VAE
 t-sne和pca各自优缺点 适用数据情况
+
+大题
+一个（4,4,6,16）卷积的权重参数个数计算。
+dqn设计flappybird思路
+宽度优先搜索大题
+Lstm  推导
+
 ```
