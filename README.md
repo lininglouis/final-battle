@@ -28,7 +28,7 @@ boosting bagging有没有类似nn dropout效果？
 cnn共享卷积有没有抗拟合效果？
 Representation learning指的是那些？ Rf gbdt nn？
 dqn的经验回放理解
-一个python list 为a，len(a)操作和 a[-1] = 0的时间复杂度
+一个python list 为a，len(a)操作和 a[-1] = 0的时间复杂度  （https://wiki.python.org/moin/TimeComplexity）
 gbdt和xgboost区别
 random walk 从1到10, 每次可以50%一步，或者移动两步，请问到4停止需要多少步（期望）
 softmax 输入是否可以输入全都是0
@@ -45,4 +45,18 @@ dqn设计flappybird思路
 宽度优先搜索大题
 Lstm  推导
 
+
 ```
+
+
+### Thoughts 思考
+
+内排序 外派序
+
+* 所谓的内排序是指所有的数据已经读入内存，在内存中进行排序的算法。排序过程中不需要对磁盘进行读写。同时，内排序也一般假定所有用到的辅助空间也可以直接存在于内存中。
+* 与之对应地，另一类排序称作外排序，即内存中无法保存全部数据，需要进行磁盘访问，每次读入部分数据到内存进行排序。
+
+一般归并排序空间复杂度为o(n) 占用空间较多，不经常作为内排序，而是作为外派序用到
+而快排空间为o(1) ，经常做为内排序。
+
+
