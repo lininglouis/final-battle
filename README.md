@@ -10,8 +10,37 @@ python Method Resolution
 动归
 
 python resnet zeropadding是否需要新参数？
+卷积时间复杂度
+宽度优先搜索的时间复杂度
 
 
+
+Resnet的bottleeck和buildingblock对比
+1. bottleneck 维度更深
+2. 时间计算复杂度一样
+3. bottleneck维度更深，输入输出的参数更多。空间复杂度高
+也就是说bottle计算复杂度不高，可以学习更深特在，但是空间复杂度高（输入输出参数多）
+
+以两个(3x3,64)的卷积 输入输出都是64  和 三个（1x1,64) (3x3,64), (1x1, 256)  输入输出都是256 为例子
+
+卷积层参数只和 kernelsize，出入channel有关， 参数量 = (kernel_size * kernel_size * inchannel + 1) * outchannel
+buildblock  (3*3*64+1）*64  *2 = 73856
+bottleneck  (1*1*256+1)*64 + (3*3*64+1)*64 + (1x1x64+1)*256 =  70016
+
+
+
+时间复杂度
+注1：为了简化表达式中的变量个数，这里统一假设输入和卷积核的形状都是正方形。 
+注2：严格来讲每层应该还包含1个Bias参数，这里为了简洁就省略了。
+M:输出特征图（Feature Map）的尺寸。
+K:卷积核（Kernel）的尺寸。
+Cin:输入通道数。
+Cout:输出通道数。
+横向做 M2次运算，  纵向做Cout次运算  每次cube运算是 K2*Cin
+M^2*K^2*Cin*Cout = O(M^2 * K^2 * Cin * Cout)
+
+空间复杂度
+空复杂度复杂度：Time~O(K^2 * Cin * Cout)   因为参数共享了，所有的卷积层K都只有一个，所以M^2次运算并不影响空间复杂度。
 
 
 # Past Puzzles
