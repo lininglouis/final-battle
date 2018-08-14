@@ -9,6 +9,7 @@ python Method Resolution
 宽度优先搜索高级模板
 动归
 
+python resnet zeropadding是否需要新参数？
 
 
 
