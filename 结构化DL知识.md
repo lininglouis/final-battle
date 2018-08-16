@@ -8,3 +8,17 @@ Thoughts 思考
 
 #### resnet 参数free---------------------------
 resnet的zero_padding是参数free的，不增加新的学习参数
+
+
+
+#### L1 L2 smoothL1 loss---------------------------
+l1 = |a| + |b|
+l2 = a2 + b2
+l1 稀疏解  对信号不敏感robust
+l2平滑解， sensitive to outiers,连续可导好求解
+
+ 
+#### Faster RCNN 理解-----------------
+正负样本选取的时候为什么用0.7和0.3的超参，与nms使用0.3的超参是否有关，
+nms是根据rpn阶段bbox的置信度cls score筛选的。
+而正负样本是根据cls和bbox筛选的
